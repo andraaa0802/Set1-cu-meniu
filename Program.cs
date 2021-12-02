@@ -301,22 +301,51 @@ namespace _282
         /// </summary>
         private static void P16()
         {
-            int[] numere=new int[5];
-            int i, j,aux;
-            for (i = 0; i < 5; i++)
-                numere[i] = int.Parse(Console.ReadLine());
-            for (i = 0; i < 4; i++)
-                for (j = i+ 1; j <= 4; j++)
-                    if (numere[i] > numere[j])
-                    {
-                        aux = numere[i];
-                        numere[i] = numere[j];
-                        numere[j] = aux;
-                    }
-            for(i=0;i<5;i++)
-                Console.Write(numere[i]+" ");
-
-
+            int a, b, c, d, e,i,j,sorted=0,numbersorted;
+            Console.WriteLine("Introduceti cele 5 numere:");
+            string linie = Console.ReadLine();
+            char[] seps = { ' ' };
+            string[] tokens = linie.Split(seps, StringSplitOptions.RemoveEmptyEntries);
+            a = int.Parse(tokens[0]);
+            b = int.Parse(tokens[1]);
+            c = int.Parse(tokens[2]);
+            d = int.Parse(tokens[3]);
+            e = int.Parse(tokens[4]);
+            for(i=0;sorted<5;i++)
+            {
+                numbersorted = 0;
+                if(i==a)
+                {
+                    sorted++;
+                    numbersorted++;
+                }
+                
+                if (i == b)
+                {
+                    sorted++;
+                    numbersorted++;
+                }
+                
+                if (i == c)
+                {
+                    sorted++;
+                    numbersorted++;
+                }
+                
+                if (i == d)
+                {
+                    sorted++;
+                    numbersorted++;
+                }
+                
+                if (i == e)
+                {
+                    sorted++;
+                    numbersorted++;
+                }
+                if(numbersorted!=0)
+                    Console.Write(i+" ");
+            }
         }
 
         /// <summary>

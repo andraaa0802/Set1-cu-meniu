@@ -84,6 +84,7 @@ namespace _282
                     break;
                 case 16:
                     P16();
+                    P16_2();
                     break;
                 case 17:
                     P17();
@@ -293,6 +294,7 @@ namespace _282
             c = int.Parse(tokens[2]);
             d = int.Parse(tokens[3]);
             e = int.Parse(tokens[4]);
+            Console.WriteLine("Numerele sortate crescator sunt:");
             for(i=0;sorted<5;i++)
             {
                 numbersorted = 0;
@@ -328,6 +330,82 @@ namespace _282
                 if(numbersorted!=0)
                     Console.Write(i+" ");
             }
+        }
+        private static void P16_2()
+        {
+            int a, b, c, d, e, max=0;
+            Console.WriteLine();
+            Console.WriteLine("Introduceti cele 5 numere pe o singura linie:");
+            string linie = Console.ReadLine();
+            char[] seps = { ' ' };
+            string[] tokens = linie.Split(seps, StringSplitOptions.RemoveEmptyEntries);
+            a = int.Parse(tokens[0]);
+            b = int.Parse(tokens[1]);
+            c = int.Parse(tokens[2]);
+            d = int.Parse(tokens[3]);
+            e = int.Parse(tokens[4]);
+            if(a>b)
+            {
+                max = a;
+                a = b;
+                b = max;
+            }
+            if (b > c)
+            {
+                max = b;
+                b = c;
+                c = max;
+            }
+            if (c > d)
+            {
+                max = c;
+                c = d;
+                d = max;
+            }
+            if (d > e)
+            {
+                max = d;
+                d = e;
+                e = max;
+            }
+            if (a > b)
+            {
+                max = a;
+                a = b;
+                b = max;
+            }
+            if (b > c)
+            {
+                max = b;
+                b = c;
+                c = max;
+            }
+            if (c > d)
+            {
+                max = c;
+                c = d;
+                d = max;
+            }
+            if (a > b)
+            {
+                max = a;
+                a = b;
+                b = max;
+            }
+            if (b > c)
+            {
+                max = b;
+                b = c;
+                c = max;
+            }
+            if (a > b)
+            {
+                max = a;
+                a = b;
+                b = max;
+            }
+
+            Console.WriteLine($"Numerele sortate crescator sunt: {a}, {b}, {c}, {d}, {e}");
         }
 
         /// <summary>
